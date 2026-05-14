@@ -45,7 +45,6 @@ ICON_MAP = {"waste": "mdi:trash-can", "recycle": "mdi:recycle", "green": "mdi:le
 
 COLLECTION_FREQUENCY = {"Weekly": 1, "Fortnightly": 2}
 
-
 class Source:
     def __init__(self, latitude: float, longitude: float):
         """Initialize source with latitude and longitude coordinates.
