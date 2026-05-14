@@ -96,34 +96,34 @@ class Source:
 
         _LOGGER.debug(
             "Found collection zone: %s",
-            zone_props.get("Collection Reference"),
+            zone_props.get("ZoneName")
         )
 
         entries = []
 
         Source.__add_collection(
-            zone_props.get("Collection Reference"),
-            zone_props.get("Collection Day"),
-            COLLECTION_FREQUENCY.get(zone_props.get("General Waste Frequency"), 0),
-            zone_props.get("Next General Waste Pickup"),
+            zone_props.get("ZoneName"),
+            zone_props.get("Garbage"),
+            "Weekly",
+            zone_props.get("nextwaste"),
             "waste",
-            entries,
+            entries
         )
 
         Source.__add_collection(
-            zone_props.get("Collection Reference"),
-            zone_props.get("Collection Day"),
-            COLLECTION_FREQUENCY.get(zone_props.get("Recycling Frequency"), 0),
-            zone_props.get("Next Recycling Pickup"),
+            zone_props.get("ZoneName"),
+            zone_props.get("Recycling"),
+            zone_props.get("Recycling"),
+            zone_props.get("nextrecyc"),
             "recycle",
             entries,
         )
 
         Source.__add_collection(
-            zone_props.get("Collection Reference"),
-            zone_props.get("Collection Day"),
-            COLLECTION_FREQUENCY.get(zone_props.get("Organics Frequency"), 0),
-            zone_props.get("Next Organics Pickup"),
+            zone_props.get("ZoneName"),
+            zone_props.get("Organic"),
+            zone_props.get("Organic"),
+            zone_props.get("nextgreen"),
             "green",
             entries,
         )
