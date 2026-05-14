@@ -19558,6 +19558,12 @@
         "split_at": "\\, (?:and )?|(?: and )"
       },
       "id": "ics_recollect"
-    }
+    },
+    {
+      "title": "Southern Grampians Shire Counil",
+      "module": "southerngrampians_vic_gov_au",
+      "default_params": {},
+      "id": "southerngrampians_vic_gov_au"
+    },
   ]
 }

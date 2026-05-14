@@ -34,12 +34,7 @@ TEST_CASES = {
     "Hamilton Model Railway Museum": {
         "latitude": -37.74226873047067,
         "longitude": 142.05171594397333,
-    },
-    # "Boundary Test - Friday Calendar B": {
-    #     # Point exactly halfway between [144.257674, -36.711266] and [144.250825, -36.715366]
-    #     "latitude": -36.713316,  # (-36.711266 + -36.715366) / 2
-    #     "longitude": 144.2542495   # (144.257674 + 144.250825) / 2
-    # }
+    }
 }
 
 _LOGGER = logging.getLogger(__name__)

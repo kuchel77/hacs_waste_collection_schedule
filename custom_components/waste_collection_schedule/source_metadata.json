@@ -5896,5 +5896,10 @@
     "docs_url": "https://github.com/mampfes/hacs_waste_collection_schedule/blob/master/doc/source/sunbury_ohio_org.md",
     "howto": {},
     "urls": {}
-  }
+  },
+  "southerngrampians_vic_gov_au": {
+    "docs_url": "https://github.com/mampfes/hacs_waste_collection_schedule/blob/master/doc/source/southerngrampians_vic_gov_au.md",
+    "howto": {},
+    "urls": {}
+  },
 }
