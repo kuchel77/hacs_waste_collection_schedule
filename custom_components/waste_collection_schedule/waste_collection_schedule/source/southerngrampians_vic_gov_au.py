@@ -13,9 +13,9 @@ URL = "https://www.sthgrampians.vic.gov.au/"
 # Geographic boundaries for Southern Grampians area
 STHGRAMPIANS_BOUNDS = {
     "min_lat": -37.9,
-    "min_lon": 142.6,
+    "min_lon": 141.4,
     "max_lat": -37.2,
-    "max_lon": 141.4,
+    "max_lon": 142.6,
 }
 
 # API endpoints
