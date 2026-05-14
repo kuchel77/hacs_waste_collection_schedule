@@ -101,111 +101,31 @@ class Source:
 
         entries = []
 
-        Source.__add_collection(
-            zone_props.get("ZoneName"),
-            zone_props.get("Garbage"),
-            "Weekly",
-            zone_props.get("nextwaste"),
-            "waste",
-            entries
+        entries.append(
+            Collection(
+                date=datetime.strptime(zone_props['nextwaste'],"%Y-%m-%d").date(),
+                t="Rubbish",
+                icon=ICON_MAP.get("waste"),
+            )
         )
 
-        Source.__add_collection(
-            zone_props.get("ZoneName"),
-            zone_props.get("Recycling"),
-            zone_props.get("Recycling"),
-            zone_props.get("nextrecyc"),
-            "recycle",
-            entries,
+        entries.append(
+            Collection(
+                date=datetime.strptime(zone_props['nextrecyc'],"%Y-%m-%d").date(),
+                t="Recycling",
+                icon=ICON_MAP.get("recycle"),
+            )
         )
 
-        Source.__add_collection(
-            zone_props.get("ZoneName"),
-            zone_props.get("Organic"),
-            zone_props.get("Organic"),
-            zone_props.get("nextgreen"),
-            "green",
-            entries,
+
+        entries.append(
+            Collection(
+                date=datetime.strptime(zone_props['nextgreen'],"%Y-%m-%d").date(),
+                t="Green Waste",
+                icon=ICON_MAP.get("green"),
+            )
         )
 
         _LOGGER.debug("Entries: %s", entries)
 
         return entries
-
-    @staticmethod
-    def __add_collection(
-        desc: str,
-        day: str,
-        weeks: int,
-        start: str,
-        collection_type: str,
-        entries: List[Collection],
-    ):
-        if not desc:
-            raise ValueError(
-                f"Missing description for {WASTE_NAMES[collection_type]} collection"
-            )
-
-        if not start:
-            raise ValueError(
-                f"Missing start date for {WASTE_NAMES[collection_type]} collection"
-            )
-
-        if not day:
-            raise ValueError(
-                f"Missing collection day for {WASTE_NAMES[collection_type]} collection"
-            )
-
-        if not weeks or weeks < 1:
-            raise ValueError(
-                f"Invalid collection frequency for {WASTE_NAMES[collection_type]} collection"
-            )
-
-        try:
-            start_date = datetime.strptime(start.strip(), "%d-%b-%Y").date()
-
-            start_day = start_date.strftime("%A")
-
-            # If the start date isn't on the specified day, find the next occurrence
-            if start_day != day:
-                days_ahead = [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday",
-                ].index(day) - [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday",
-                ].index(
-                    start_day
-                )
-                if days_ahead <= 0:
-                    days_ahead += 7
-                start_date = start_date + timedelta(days=days_ahead)
-
-            current_date = start_date
-            end_date = datetime.now().date() + timedelta(days=365)
-
-            while current_date <= end_date:
-                entries.append(
-                    Collection(
-                        date=current_date,
-                        t=WASTE_NAMES[collection_type],
-                        icon=ICON_MAP[collection_type],
-                    )
-                )
-
-                current_date = current_date + timedelta(weeks=weeks)
-
-        except ValueError as e:
-            raise ValueError(
-                f"Invalid date format for {WASTE_NAMES[collection_type]} collection: {start}"
-            ) from e
