@@ -222,6 +222,7 @@ If you already have enough information for your municipality/region, you are ver
 - [Shoalhaven City Council](/doc/source/shoalhaven_nsw_gov_au.md) / shoalhaven.nsw.gov.au
 - [Snowy Valleys Council](/doc/source/impactapps_com_au.md) / snowyvalleys.nsw.gov.au
 - [South Burnett Regional Council](/doc/source/impactapps_com_au.md) / southburnett.qld.gov.au
+- [Southern Grampians Shire Council](/doc/source/southerngrampians_vic_gov_au.md) / sthgrampians.vic.gov.au
 - [Southern Mallee District Council](/doc/source/app_my_local_services_au.md) / southernmallee.sa.gov.au
 - [Stirling](/doc/source/stirling_wa_gov_au.md) / stirling.wa.gov.au
 - [Stonnington City Council](/doc/source/stonnington_vic_gov_au.md) / stonnington.vic.gov.au
