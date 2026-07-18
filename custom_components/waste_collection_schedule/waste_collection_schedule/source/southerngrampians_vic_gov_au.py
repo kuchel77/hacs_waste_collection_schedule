@@ -112,7 +112,7 @@ class Source:
             )
 
         for i in range(3):
-            date = datetime.strptime(zone_props['nextwaste'],"%Y-%m-%d").date() + timedelta(days=i*14)
+            date = datetime.strptime(zone_props['nextrecyc'],"%Y-%m-%d").date() + timedelta(days=i*14)
             entries.append(
                 Collection(
                     date=date,
@@ -123,7 +123,7 @@ class Source:
 
 
         for i in range(3):
-            date = datetime.strptime(zone_props['nextwaste'],"%Y-%m-%d").date() + timedelta(days=i*14)
+            date = datetime.strptime(zone_props['nextgreen'],"%Y-%m-%d").date() + timedelta(days=i*14)
             entries.append(
                 Collection(
                     date=date,
